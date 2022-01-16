@@ -1,5 +1,6 @@
 import { client as _client } from 'tmi.js'
 import 'dotenv/config'
+import { commands } from './commands.js'
 
 const prefix = '!'
 
@@ -21,16 +22,16 @@ client.connect()
 function onMessageHandler(target, tags, msg, self) {
 	if (self || !msg.startsWith(prefix)) return
 
-	const args = msg.slice(1).split(' ')
-	const command = args.shift().toLowerCase()
+	const args = msg.slice(prefix.length).trim().split(/ +/)
+	const input = args.shift().toLowerCase()
 
-	console.log(msg.startsWith(prefix))
+	const command = commands.find((cmd) => cmd.name === input)
 
-	if (command === 'hello') {
-		client.say(target, `Hello ${tags.username}!`)
-		console.log(`* ${tags.username} used ${command}`)
+	if (command) {
+		console.log(`* ${tags.username} used ${command.name}`)
+		client.say(target, command.response({ target, tags, msg }))
 	} else {
-		console.log(`* ${tags.username} used unknown ${command}`)
+		console.log(`* ${tags.username} used unknown ${input}`)
 	}
 }
 

@@ -6,6 +6,7 @@ B4LBOT is a chat bot for Twitch.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [TODO](#todo)
 
 ## Installation
 
@@ -19,3 +20,16 @@ B4LBOT is a chat bot for Twitch.
 | `add <command> <description>`  | Adds a command  |      |          |            | x   | x        |
 | `edit <command> <description>` | Edits a command |      |          |            | x   | x        |
 | `delete <command>`             |                 |      |          |            | x   | x        |
+
+## TODO
+
+**CLI:**
+
+- [ ] Add check if json file exist and/or is empty
+- [ ] Add check if command still exist when adding
+- [ ] Add delete command
+- [ ] Add edit command
+
+**Bot:**
+
+- [ ] Use json file instead of js file for commands (in order to add commands via cli)
