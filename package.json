@@ -1,0 +1,29 @@
+{
+	"name": "b4lbot",
+	"version": "0.1.0",
+	"description": "Chat bot for twitch",
+	"keywords": [
+		"twitch",
+		"node"
+	],
+	"homepage": "https://github.com/captainbalbin/b4lbot#readme",
+	"bugs": {
+		"url": "https://github.com/captainbalbin/b4lbot/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/captainbalbin/b4lbot.git"
+	},
+	"license": "MIT",
+	"author": "captainbalbin",
+	"type": "module",
+	"main": "bot.js",
+	"scripts": {
+		"start": "nodemon bot.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"dotenv": "^12.0.4",
+		"tmi.js": "^1.8.5"
+	}
+}
